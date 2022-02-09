@@ -18,7 +18,7 @@ namespace Always_Coffee_Time.BL
         {
             _contexto.Productos.ToList();
 
-           /* var producto1 = new Producto();
+            var producto1 = new Producto();
             producto1.Id = 1;
             producto1.Descripcion = "Cafe Mocca";
             producto1.Precio = 40;
@@ -38,7 +38,7 @@ namespace Always_Coffee_Time.BL
             listadeProductos.Add(producto2);
             listadeProductos.Add(producto3);
 
-            return listadeProductos;*/
+            return listadeProductos;
             return _contexto.Productos.ToList();
         }
     }
