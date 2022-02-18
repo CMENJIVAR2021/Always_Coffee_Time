@@ -9,17 +9,24 @@ namespace Always_Coffee_Time.BL
     public class ProductosBL
     {
         Contexto _contexto;
+        public List<Producto> ListadeProductos { get; set; }
 
         public ProductosBL()
         {
             _contexto = new Contexto();
+            ListadeProductos = new List<Producto>();
         }
-        public List<Producto> ObtenerProductos()
-        {
-            _contexto.Productos.ToList();
 
-         
-            return _contexto.Productos.ToList();
+             public List<Producto> ObtenerProductos()
+        {
+            ListadeProductos = _contexto.Productos.ToList();
+            return ListadeProductos;
         }
+        // se creo de la nada Ojo con este
+    /*   public object ObtenerProductos()
+        {
+            throw new NotImplementedException();
+        }*/
     }
+     
 }
