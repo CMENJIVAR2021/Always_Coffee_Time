@@ -22,11 +22,6 @@ namespace Always_Coffee_Time.BL
             ListadeProductos = _contexto.Productos.ToList();
             return ListadeProductos;
         }
-        // se creo de la nada Ojo con este
-    /*   public object ObtenerProductos()
-        {
-            throw new NotImplementedException();
-        }*/
     }
      
 }
