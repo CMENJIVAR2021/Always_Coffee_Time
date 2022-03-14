@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Cafeteria.WebAdmin.Controllers
 {
+
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;
@@ -30,6 +31,7 @@ namespace Cafeteria.WebAdmin.Controllers
         {
             var nuevoProducto = new Producto();
             var categorias = _categoriasBL.ObtenerCategorias();
+
 
             ViewBag.CategoriaId =
                 new SelectList(categorias, "Id", "Descripcion");

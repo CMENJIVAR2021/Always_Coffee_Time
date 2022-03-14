@@ -7,19 +7,18 @@
 <h2>Productos</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo", "Crear")
+    @Html.ActionLink("Nuevo Producto", "Crear")
 </p>
-
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Precio)
+            @Html.DisplayNameFor(model => model.Categoria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CategoriaId)
+            @Html.DisplayNameFor(model => model.Precio)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UrlImagen)
@@ -36,23 +35,20 @@
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Precio)
+            @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoriaId)
+            @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
             <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.UrlImagen)
-        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Activo)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Detalle", new { id=item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
             @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
         </td>
     </tr>
