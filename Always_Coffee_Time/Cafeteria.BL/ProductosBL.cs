@@ -33,7 +33,7 @@ namespace Cafeteria.BL
             ListadeProductos = _contexto.Productos
                 .Include("Categoria")
                 .Where(r => r.Activo == true)
-                .OrderBy(r => r.Descripcion)
+                .OrderBy(R => R.Descripcion)
                 .ToList();
 
             return ListadeProductos;
