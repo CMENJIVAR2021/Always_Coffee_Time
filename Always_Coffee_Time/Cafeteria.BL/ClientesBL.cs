@@ -23,6 +23,15 @@ namespace Cafeteria.BL
 
             return ListadeClientes;
         }
+        // filtro para obtener clientes
+        public List<Cliente> ObtenerClientesActivos()
+        {
+            ListadeClientes = _contexto.Clientes
+                .Where(r => r.Activo == true)
+                .ToList();
+
+            return ListadeClientes;
+        }
 
         public void GuardarCliente(Cliente cliente)
         {

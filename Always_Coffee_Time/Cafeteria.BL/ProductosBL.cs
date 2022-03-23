@@ -25,6 +25,16 @@ namespace Cafeteria.BL
 
             return ListadeProductos;
         }
+        //obtner los productos activos
+        public List<Producto> ObtenerProductosActivos()
+        {
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .ToList();
+
+            return ListadeProductos;
+        }
 
         public void GuardarProducto(Producto producto)
         {
