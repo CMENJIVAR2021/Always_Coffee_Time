@@ -19,7 +19,9 @@ namespace Cafeteria.BL
 
         public List<Cliente> ObtenerClientes()
         {
-            ListadeClientes = _contexto.Clientes.ToList();
+            ListadeClientes = _contexto.Clientes
+                .OrderBy(r => r.Nombre)
+                .ToList();
 
             return ListadeClientes;
         }
@@ -28,6 +30,7 @@ namespace Cafeteria.BL
         {
             ListadeClientes = _contexto.Clientes
                 .Where(r => r.Activo == true)
+                .OrderBy(r => r.Nombre)
                 .ToList();
 
             return ListadeClientes;
